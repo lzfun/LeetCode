@@ -3,7 +3,7 @@
 """
 Created on Sat Aug 17 21:12:23 2019
 
-@author: ludizhan
+@author: lz
 """
 
 class Solution:

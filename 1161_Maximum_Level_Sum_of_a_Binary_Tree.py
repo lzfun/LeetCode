@@ -3,7 +3,7 @@
 """
 Created on Sat Aug 17 19:28:45 2019
 
-@author: ludizhan
+@author: lz
 """
 
 class TreeNode:
