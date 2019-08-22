@@ -13,6 +13,6 @@
   
 - Breadth-first search (BFS) / Depth-first search (DFS)
   - [79. Word Search](79_word_search_v2.py)
-    - Python: Can not use [[0]*n]*m to create list of list!!! The lists will refer to the same id!
+    - Python: Can not use `[[0]*n]*m` to create list of list!!! The lists will refer to the same id!
   - [1162. As Far from Land as possible](1162_As_Far_from_Land_as_Possible.py)
 
