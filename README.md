@@ -16,3 +16,5 @@
     - Python: Can not use `[[0]*n]*m` to create list of list!!! The lists will refer to the same id!
   - [1162. As Far from Land as possible](1162_As_Far_from_Land_as_Possible.py)
 
+- Hash Table
+  - [380. Insert Delete GetRandom O(1)](380_insert_delete_getrandom.py)
