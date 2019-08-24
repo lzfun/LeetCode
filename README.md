@@ -22,4 +22,4 @@
 
 - General Algorithm / Array Manipulation
   - [54. Spiral Matrix](54_spiral_matrix.py)
-  
+    - Python: [Use function `yield` instead of `return`](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/) to produce a generator, or a sequence of values without using storing the sequence.
