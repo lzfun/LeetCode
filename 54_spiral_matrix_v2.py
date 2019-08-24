@@ -9,7 +9,7 @@ Created on Sat Aug 24 16:04:55 2019
 class Solution:
     def spiralOrder(self, matrix):
         # m: number of column, n: number of row
-        if len(matrix) < 1 or len(matrix[0]) < 1:
+        if not matrix:
             return([])
             
         m, n = len(matrix), len(matrix[0])
@@ -21,8 +21,8 @@ class Solution:
         answer = []
         
         while min_i <= max_i and min_j <= max_j:
-            for i, j in self.spiralCoords(min_i, min_j, max_i, max_j):
-                answer.append(matrix[i][j])
+            for item in self.spiralCoords(matrix, min_i, min_j, max_i, max_j):
+                answer.append(item)
             min_i += 1
             max_i -= 1
             min_j += 1
@@ -30,13 +30,13 @@ class Solution:
         return(answer)
 
     
-    def spiralCoords(self, min_i, min_j, max_i, max_j):
+    def spiralCoords(self, matrix, min_i, min_j, max_i, max_j):
         for j in range(min_j, max_j + 1):
-            yield min_i, j
+            yield matrix[min_i][j]
         for i in range(min_i + 1, max_i + 1):
-            yield i, max_j
+            yield matrix[i][max_j]
         if min_i < max_i and min_j < max_j:
-            for j in range(max_j - 1, min_j, -1):
-                yield max_i, j
+            for j in range(max_j - 1, min_j - 1, -1):
+                yield matrix[max_i][j]
             for i in range(max_i - 1, min_i, -1):
-                yield i, min_j
+                yield matrix[i][min_j]
