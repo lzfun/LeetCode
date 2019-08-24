@@ -18,3 +18,4 @@
 
 - Hash Table
   - [380. Insert Delete GetRandom O(1)](380_insert_delete_getrandom.py)
+    - Python: In Python 2, dictionary.keys() returns a list contains all the keys. But in Python 3, the same function would return an object called dict_keys([]), and it does not support indexing. Converting the object to a list would cost `O(n)` time.
