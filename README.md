@@ -25,3 +25,4 @@
     - Python: [Use function `yield` instead of `return`](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/) to produce a generator, or a sequence of values without using storing the sequence.
     - [Alternative version using `yield`](54_spiral_matrix_v2.py): Code simplified, speed improved only if we yield matrix entries directly instead of coordinates
     
+  - [59. Spiral Matrix II](59_spiral_matrix_II.py)
