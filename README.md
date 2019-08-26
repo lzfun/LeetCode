@@ -27,6 +27,6 @@
     
   - [59. Spiral Matrix II](code/59_spiral_matrix_II.py)
 
-- Other
+- Miscellaneous
   - [1154. Day of the Year](code/1154_day_of_year.py)
-    - Random notes: Leap year rules: `(year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)`
+    - Leap year rules: `(year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)`
