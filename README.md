@@ -26,3 +26,7 @@
     - [Alternative version using `yield`](54_spiral_matrix_v2.py): Code simplified, speed improved only if we yield matrix entries directly instead of coordinates
     
   - [59. Spiral Matrix II](59_spiral_matrix_II.py)
+
+- Other
+  - [1154. Day of the Year](1154_day_of_year.py)
+    - Random notes: Leap year rules: `(year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)`
