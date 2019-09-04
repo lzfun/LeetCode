@@ -2,7 +2,7 @@
 
 ![alt text](Question91.PNG)
 
-### [Initial idea](91_decode_ways.md#appendix)
+### [Initial idea](91_decode_ways.md# Python code for the initial idea)
 
 Loop through the string and look for possible ways of decoding:
   - if digit > 2: only one possible way of decoding
@@ -19,12 +19,40 @@ Can ultilize recursion to calculate number of possibilities for the rest of the 
 
 ### Improved idea
 
-We will use string with length equals to `len(s) + 1` to keep counting the possibilities. 
+Instead of using "recursion" to get number of ways of decoding `s[i:]`, we calculate it and store it in a string with length equals to `len(s) + 1`.
 
+**Issue**
+
+s[i+1:] may be indexing out of range.
+
+
+### Improved idea *Ver 2.0*
+
+Calculate number of ways of decoding from back to the front. s[i-1] will not cause any indexing issue.
+
+Code:
+
+```Python
+#Faster solution 2
+class Solution:
+    def numDecodings(self, s):
+        if s == "":
+            return 0
+        n = len(s)
+        cache = [0 for i in range(len(s) + 1)]
+        cache[0] = 1
+        for i in range(1, n + 1):
+            if s[i - 1] != '0':
+                cache[i] += cache[i - 1]
+            if i != 1 and s[i-2:i] < "27" and s[i-2:i] > "09":
+                cache[i] += cache[i - 2]
+        
+        return cache[len(s)]
+```
 
 ### Appendix
 
-Python code for the initial idea:
+#### Python code for the initial idea
 
 ```Python
 class Solution:
@@ -62,4 +90,42 @@ class Solution:
             else:
                 answer += self.numDecodings(s[1:])
             return(answer)
+```
+
+```Python
+class Solution:
+    def numDecodings(self, s):
+        answer = [0]*(len(s)+1)
+        
+        if 0 < int(s[0]) <= 9:
+            answer[0] = 1
+        else:
+            answer[0] = 0
+            
+        answer[-1] = 1
+        
+        for i in range(1, len(s)):
+            if answer[i-1] == 0:
+                return(0)
+            else:
+                if 0 < int(s[i]) <= 9:
+                    answer[i] += answer[i-1]
+                else:
+                    answer[i] += 0
+                    
+                if 10 <= int(s[i-1:i+1]) <= 26:
+                    answer[i] += answer[i-2]
+                else:
+                    answer[i] += 0
+        return(answer[-2])
+```
+
+#### simpler code
+```Python
+class Solution:
+    def numDecodings(self, s):
+        previous_ways, ways, previous_chr = 0, int(s>''), ''
+        for chr in s:
+            previous_ways, ways, previous_chr = ways, (chr > '0') * ways + (9 < int(previous_chr + chr) < 27) * previous_ways, chr
+        return ways
 ```
