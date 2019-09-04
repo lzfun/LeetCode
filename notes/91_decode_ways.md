@@ -2,7 +2,7 @@
 
 ![alt text](Question91.PNG)
 
-### [Initial idea](Appendix)
+### [Initial idea](91_decode_ways.md#appendix)
 
 Loop through the string and look for possible ways of decoding:
   - if digit > 2: only one possible way of decoding
