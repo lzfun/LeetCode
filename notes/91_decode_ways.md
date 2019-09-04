@@ -14,7 +14,7 @@ Can ultilize recursion to calculate number of possibilities for the rest of the 
 
 **Issue**
 
- - It's hard to stop when we encounter invalid "0"s in betweeen.
+ - It's hard to stop when we encounter invalid "0"s in between.
  - Recursion is not necessary / feasible to implemented since the whole string can be invalid
 
 ### Improved idea
