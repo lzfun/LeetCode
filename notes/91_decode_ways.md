@@ -70,6 +70,8 @@ For simpler code with the same idea see Appendix [simpler code](91_decode_ways.m
 
 #### Python code for the initial idea
 
+Didn't pass the tests due to exceeded time limit.
+
 ```Python
 class Solution:
     def numDecodings(self, s):
@@ -114,17 +116,19 @@ class Solution:
 class Solution:
     def numDecodings(self, s):
         if s == "":
-            return 0
+            return(0)
         n = len(s)
-        cache = [0 for i in range(len(s) + 1)]
-        cache[0] = 1
+        
+        answer = [0 for i in range(len(s) + 1)]
+        answer[0] = 1
         for i in range(1, n + 1):
             if s[i - 1] != '0':
-                cache[i] += cache[i - 1]
+                answer[i] += answer[i - 1]
+
             if i != 1 and s[i-2:i] < "27" and s[i-2:i] > "09":
-                cache[i] += cache[i - 2]
+                answer[i] += answer[i - 2]
         
-        return cache[len(s)]
+        return(answer[len(s)])
 ```
 
 #### simpler code
@@ -132,9 +136,9 @@ class Solution:
 ```Python
 class Solution:
     def numDecodings(self, s):
-        previous_ways, ways, previous_chr = 0, int(s>''), ''
-        for chr in s:
-            previous_ways, ways, previous_chr = 
-            ways, (chr > '0') * ways + (9 < int(previous_chr + chr) < 27) * previous_ways, chr
-        return ways
+        previous_ans, answer, previous_ch = 0, int(s>''), ''
+        for ch in s:
+            previous_ans, answer, previous_ch = answer, (ch > '0') * answer + (9 < int(previous_ch + ch) < 27) * previous_ans, ch
+
+        return(answer)
 ```
