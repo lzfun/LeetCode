@@ -28,7 +28,7 @@ s[i+1:] may be indexing out of range.
 
 ### Improved idea *Ver 2.0*
 
-Calculate number of ways of decoding from back to the front. s[i-1] will not cause any indexing issue.
+[Explanation Pending]
 
 Code:
 
@@ -142,3 +142,5 @@ class Solution:
 
         return(answer)
 ```
+
+#### link to the [.py file](code/91_decode_ways.py)
