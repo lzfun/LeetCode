@@ -143,4 +143,4 @@ class Solution:
         return(answer)
 ```
 
-#### link to the [.py file](code/91_decode_ways.py)
+#### link to the [.py file](../code/91_decode_ways.py)
